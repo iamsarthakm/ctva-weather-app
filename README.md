@@ -1,7 +1,6 @@
 # ctva-weather-app
 
-The application stores temperature and rainfall data for different weather stations stated in locations such as Nebraska, Iowa, Illinois, Indiana,  Ohio. The analytics are performed on the data and stored too. The data is exposed using Rest APIs and can be accessed by following the steps given
-below
+The application stores temperature and rainfall data for different weather stations stated in locations such as Nebraska, Iowa, Illinois, Indiana,  Ohio. The analytics are performed on the data and stored too. The data is exposed using Rest APIs and can be accessed by following the steps given below
 
 ## Initial Setup
 
@@ -39,3 +38,18 @@ below
     ```bash
     http://localhost:8000/swagger/
     ```
+
+
+## Tooling
+
+### Stack
+
+- `django` - for web framework
+- `postgres` - for database
+
+### Python tooling
+
+- `black` - for formatting
+- `flake8` - for linting
+- `isort` - for import sorting
+- `swagger` - for documentation
