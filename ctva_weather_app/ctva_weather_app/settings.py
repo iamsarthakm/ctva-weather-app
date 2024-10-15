@@ -70,6 +70,7 @@ TEMPLATES = [
         },
     },
 ]
+REST_FRAMEWORK = {"EXCEPTION_HANDLER": "weather.utils.custom_exception_handler"}
 
 SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {

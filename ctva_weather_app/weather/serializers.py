@@ -1,10 +1,11 @@
 from rest_framework import serializers
+from .utils import CustomException
 
 
 class WeatherDataSerializer(serializers.Serializer):
     # query params for pagination
-    limit = serializers.IntegerField(default=10)
-    offset = serializers.IntegerField(default=0)
+    limit = serializers.IntegerField(default=10, min_value=1)
+    offset = serializers.IntegerField(default=0, min_value=0)
 
     # query params for ordering data
     order_by = serializers.CharField(max_length=255, default="id")
@@ -20,13 +21,22 @@ class WeatherDataSerializer(serializers.Serializer):
     )
 
     def validate(self, attrs):
+        for field in attrs["fields"]:
+            if field not in [
+                "id",
+                "station_id",
+                "date",
+                "max_temperature",
+                "min_temperature",
+            ]:
+                raise CustomException("Please Enter correct fields")
         return super().validate(attrs)
 
 
 class WeatherAnalyticsSerializer(serializers.Serializer):
     # query params for pagination
-    limit = serializers.IntegerField(default=10)
-    offset = serializers.IntegerField(default=0)
+    limit = serializers.IntegerField(default=10, min_value=1)
+    offset = serializers.IntegerField(default=0, min_value=0)
 
     # query params for ordering data
     order_by = serializers.CharField(max_length=255, default="id")
@@ -44,4 +54,15 @@ class WeatherAnalyticsSerializer(serializers.Serializer):
     )
 
     def validate(self, attrs):
+        for field in attrs["fields"]:
+            if field not in [
+                "id",
+                "station_id",
+                "year",
+                "avg_max_temp",
+                "avg_min_temp",
+                "total_ppt",
+            ]:
+
+                raise CustomException("Please Enter correct fields")
         return super().validate(attrs)
