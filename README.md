@@ -42,6 +42,14 @@ The application stores temperature and rainfall data for different weather stati
     ```bash
     http://localhost:8000/swagger/
     ```
+    ### Rest APIs
+
+    The APIs support all 4 basic functions
+    1. filtering (station_id, date or year)
+    2. pagination
+    3. sorting
+    4. fields(if need fewer fields in response)
+
 
 6. Run Unit tests
 
