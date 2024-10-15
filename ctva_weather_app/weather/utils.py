@@ -3,6 +3,11 @@ from .models import WeatherData, WeatherAnalytics
 
 
 def build_weather_data_query_params(validated_data):
+    """
+    Function aims to organise and make sense of query parameters
+    so that could be used in query directly.
+    Helps in de cluttering code
+    """
     limit = validated_data["limit"]
     offset = validated_data["offset"]
     order_by = validated_data["order_by"]
@@ -27,6 +32,9 @@ def build_weather_data_query_params(validated_data):
 
 
 def get_weather_data(qs, fields, order, limit, offset):
+    """
+    fetches query results and count
+    """
     weather_data_qs = WeatherData.objects.filter(qs).order_by(order)
     count = weather_data_qs.count()
     weather_data = weather_data_qs.values(*fields)[offset : limit + offset]
@@ -34,6 +42,11 @@ def get_weather_data(qs, fields, order, limit, offset):
 
 
 def build_weather_analytics_query_params(validated_data):
+    """
+    Function aims to organise and make sense of query parameters
+    so that could be used in query directly.
+    Helps in de cluttering code
+    """
     limit = validated_data["limit"]
     offset = validated_data["offset"]
     order_by = validated_data["order_by"]
@@ -65,6 +78,9 @@ def build_weather_analytics_query_params(validated_data):
 
 
 def get_weather_analytics(qs, fields, order, limit, offset):
+    """
+    fetches query results and count
+    """
     weather_analytics_qs = WeatherAnalytics.objects.filter(qs).order_by(order)
     count = weather_analytics_qs.count()
     weather_analytics_data = weather_analytics_qs.values(*fields)[

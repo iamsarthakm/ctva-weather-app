@@ -10,12 +10,12 @@ from .utils import (
     build_weather_analytics_query_params,
     get_weather_analytics,
 )
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg.utils import swagger_auto_schema  # type: ignore
 from rest_framework.views import APIView
 
 
 class WeatherData(APIView):
-
+    # added decorator for swagger documentation
     @swagger_auto_schema(responses={200: WeatherDataSerializer()})
     def get(self, request):
         # view serializer for processing query params
@@ -44,7 +44,7 @@ class WeatherData(APIView):
 
 
 class WeatherAnalytics(APIView):
-
+    # added decorator for swagger documentation
     @swagger_auto_schema(responses={200: WeatherAnalyticsSerializer()})
     def get(self, request):
         # view serializer for processing query params

@@ -1,7 +1,5 @@
 from rest_framework import serializers
 
-# from agri_collect.utils import CustomException
-
 
 class WeatherDataSerializer(serializers.Serializer):
     # query params for pagination
