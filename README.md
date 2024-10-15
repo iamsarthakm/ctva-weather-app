@@ -8,7 +8,7 @@ below
 1. Clone the project git repository
 
     ```bash
-    git@github.com:iamsarthakm/ctva-weather-app.git
+    git clone git@github.com:iamsarthakm/ctva-weather-app.git
     cd ctva-weather-app
     ```
 
