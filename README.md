@@ -23,7 +23,11 @@ The application stores temperature and rainfall data for different weather stati
 3. Ingest weather data and populate analytics
 
     ```bash
+   # slow
     python3 manage.py process_weather_data
+    #faster
+    python3 scripts/weather_data_ingestion.py 
+
     python3 manage.py populate_weather_analytics
     ```
 
@@ -37,6 +41,12 @@ The application stores temperature and rainfall data for different weather stati
 
     ```bash
     http://localhost:8000/swagger/
+    ```
+
+6. Run Unit tests
+
+    ```bash
+    python3 manage.py test
     ```
 
 

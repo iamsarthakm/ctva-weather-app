@@ -9,7 +9,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.process_weather_data(
-            "/Users/sarthak/Desktop/personal/ctva-weather-app/wx_data"
+            "/ctva-weather-app/wx_data"
         )
 
     def process_weather_data(self, directory_path):

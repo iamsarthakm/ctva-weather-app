@@ -10,6 +10,8 @@ class Command(BaseCommand):
         self.populate_weather_analytics()
 
     def populate_weather_analytics(self):
+        # using filters to get rid of none records
+        # annotate to group all data by years and aggregating results
         weather_analytics_data = (
             WeatherData.objects.annotate(year=functions.ExtractYear("date"))
             .values("station_id", "year")
@@ -24,7 +26,7 @@ class Command(BaseCommand):
                 total_ppt=Sum("precipitation"),
             )
         )
-
+        # creating an array of type WeatherAnayttics for bulk upload of data
         analytics_records = []
         for record in weather_analytics_data:
             analytics_records.append(
