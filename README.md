@@ -63,3 +63,7 @@ The application stores temperature and rainfall data for different weather stati
 - `flake8` - for linting
 - `isort` - for import sorting
 - `swagger` - for documentation
+
+## HLD
+
+![image](https://github.com/user-attachments/assets/d4103a73-ea6f-4150-a939-fb07740b38ba)
