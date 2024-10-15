@@ -1,0 +1,10 @@
+Deployment
+
+Coming to Deployment, at high level we will need the following services in an ideal sceario.
+1. EC2 - VM (for django server)
+2. An RDS (for postgres database)
+3. S3 Bucket storage -> for storing text files weather data
+4. VPC -> for services not to be exposed
+5. Lambda -> Execution of weather ingestion and analytics scripts as weather data is added.
+6. AWS ELB
+6. Route 53 -> domain mapping  
