@@ -18,17 +18,25 @@ The application stores temperature and rainfall data for different weather stati
     source venv/bin/activate
     pip3 install -r requirements.txt
     cp .env.example .env
+
+
+    # setup database (for local Environment if not setup)
+    # Step1 - Run Postgres server, create a database and populate envs
+    python3 manage.py makemigrations
+    python3 manage.py migrate
     ```
+
+
 
 3. Ingest weather data and populate analytics
 
     ```bash
    # slow
-    python3 manage.py process_weather_data
+    cd ctva_weather_app && python3 manage.py process_weather_data
     #faster
     python3 scripts/weather_data_ingestion.py 
 
-    python3 manage.py populate_weather_analytics
+    cd ctva_weather_app && python3 manage.py populate_weather_analytics
     ```
 
 4. Run django server to get data using rest apis
